@@ -43,11 +43,10 @@ public:
 
     bool isValid(vector<int>  currentSolution, int newPostion) {
         bool flag_column = find(currentSolution.begin(), currentSolution.end(), newPostion) == currentSolution.end();
-        vector<int> diagonal_one(currentSolution.size(), 0);
-        vector<int> diagonal_two(currentSolution.size(), 0);
+        vector<int> diagonal_one, diagonal_two;
         for (int i = 0; i < currentSolution.size(); i++) {
-            diagonal_one[i] = i + currentSolution[i];
-            diagonal_two[i] = i - currentSolution[i];
+            diagonal_one.push_back(i + currentSolution[i]);
+            diagonal_two.push_back(i - currentSolution[i]);
         }
         bool flag_diagonal_one = find(diagonal_one.begin(), diagonal_one.end(), currentSolution.size() + newPostion) == diagonal_one.end();
         bool flag_diagonal_two = find(diagonal_two.begin(), diagonal_two.end(), currentSolution.size() - newPostion) == diagonal_two.end();
