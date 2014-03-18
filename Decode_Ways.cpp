@@ -1,8 +1,7 @@
 class Solution {
 public:
     int numDecodings(string s) {
-        if (s.size() == 0)
-            return 0;
+        if (s.empty()) return 0;
         vector<int> ways(s.size() + 1, 1);
         for (int i = s.size() - 1; i >= 0; i--) {
             if (s[i] == '0')
