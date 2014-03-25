@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     string addBinary(string a, string b) {
         // special cases
         if (a.empty() && b.empty()) return "";

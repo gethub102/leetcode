@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> searchRange(int A[], int n, int target) {
         vector<int> results;
         int i = 0;

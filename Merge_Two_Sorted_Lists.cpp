@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
         ListNode* head = new ListNode(0);
         ListNode* tmp = new ListNode(0);

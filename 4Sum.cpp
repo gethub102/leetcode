@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > fourSum(vector<int>& num, int target) {
         vector<vector<int> >  result;
         if (num.size() < 4) return result;

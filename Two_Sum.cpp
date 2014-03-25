@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> twoSum(vector<int>& numbers, int target) {
         vector<int> results;
         if (numbers.size() < 2) return results;

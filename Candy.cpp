@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int candy(vector<int>& ratings) {
         if (ratings.size() <= 1) return ratings.size();
         int i;

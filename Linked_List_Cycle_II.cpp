@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* detectCycle(ListNode* head) {
         ListNode* fast = head;
         ListNode* slow = head;

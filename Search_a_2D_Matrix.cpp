@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool searchMatrix(vector<vector<int> >& matrix, int target) {
         if (matrix.empty()) return false;
         int column = matrix[0].size() - 1;

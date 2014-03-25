@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > generate(int numRows) {
         vector<vector<int> > result;
         for (int i = 1; i <= numRows; i++) {

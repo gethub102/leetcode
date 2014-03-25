@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int totalNQueens(int n) {
         int allSolutions = 0;
         vector<int> currentSolution;

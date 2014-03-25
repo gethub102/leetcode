@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<string> letterCombinations(string digits) {
         vector<string> result;
         if (digits.empty()) {

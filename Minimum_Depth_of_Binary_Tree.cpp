@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     int minDepth(TreeNode* root) {
         return minDepthRecursion(root, 0);
     }

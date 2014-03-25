@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     bool isBalanced(TreeNode* root) {
         if (!root) return true;
         else return isBalanced(root->left) && isBalanced(root->right) && abs(height(root->left) - height(root->right)) <= 1;

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void merge(int A[], int m, int B[], int n) {
         if (n == 0) return;
         if (m == 0) {

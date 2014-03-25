@@ -12,7 +12,7 @@ bool compareInterval(Interval a, Interval b) {
 }
 
 class Solution {
-public:
+  public:
     vector<Interval> merge(vector<Interval>& intervals) {
         vector<Interval> result;
         sort(intervals.begin(), intervals.end(), compareInterval);

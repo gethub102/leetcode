@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     void connect(TreeLinkNode* root) {
         while (root) {
             TreeLinkNode* ptr = root;

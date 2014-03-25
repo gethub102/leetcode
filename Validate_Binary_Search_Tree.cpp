@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     bool isValidBST(TreeNode* root) {
         if (!root) return true;
         vector<int> inorder;

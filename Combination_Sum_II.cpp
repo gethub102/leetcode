@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > combinationSum2(vector<int>& num, int target) {
         vector<vector<int> > results;
         vector<int> singleSolution;

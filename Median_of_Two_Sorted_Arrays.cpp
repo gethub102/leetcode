@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     double findMedianSortedArrays(int A[], int m, int B[], int n) {
         vector<int> C;
         int i = 0;

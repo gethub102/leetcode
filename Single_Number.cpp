@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int singleNumber(int A[], int n) {
         int result = 0;
         int i = 0;

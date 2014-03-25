@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     vector<int> postorderTraversal(TreeNode* root) {
         vector<int> result;
         postorderTraversalRecursion(root, result);

@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     int maxDepth(TreeNode* root) {
         return maxDepthRecursion(root, 0);
     }

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int uniquePathsWithObstacles(vector<vector<int> >& obstacleGrid) {
         int rows = obstacleGrid.size();
         if (rows == 0) return 0;

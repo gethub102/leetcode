@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > permuteUnique(vector<int>& num) {
         vector<vector<int> > result;
         vector<int> singleSolution;

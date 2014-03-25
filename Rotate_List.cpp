@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* rotateRight(ListNode* head, int k) {
         int length = 0;
         ListNode* originalHead = new ListNode(0);

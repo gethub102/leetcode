@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int canCompleteCircuit(vector<int>& gas, vector<int>& cost) {
         int sum = 0;
         int total = 0;

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int searchInsert(int A[], int n, int target) {
         if (n == 0) return 0;
         for (int i = 0; i < n; i++) {

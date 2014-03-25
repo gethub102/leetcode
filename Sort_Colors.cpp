@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void sortColors(int A[], int n) {
         int pivot = 1;
         int smaller = 0, equal = 0, larger = n - 1;

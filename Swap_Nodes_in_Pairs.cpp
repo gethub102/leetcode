@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* swapPairs(ListNode* head) {
         if (!head || !head->next) return head;
         ListNode* p = new ListNode(0);

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int firstMissingPositive(int A[], int n) {
         int i = 0;
         while (i < n)  {

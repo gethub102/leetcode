@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool isPalindrome(string s) {
         int begin = 0;
         int end = s.length() - 1;

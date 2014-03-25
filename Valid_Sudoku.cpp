@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool isValidSudoku(vector<vector<char> >& board) {
         // each rows
         vector<vector<char> > columns(9);

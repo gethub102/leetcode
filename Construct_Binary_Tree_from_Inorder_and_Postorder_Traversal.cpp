@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
         return buildTree(inorder, postorder, 0, inorder.size() - 1, 0, postorder.size() - 1);
     }

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool canJump(int A[], int n) {
         int maxCover = 0;
         for (int start = 0; start <= maxCover && start < n; start++)         {

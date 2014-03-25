@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int largestRectangleArea(vector<int>& height) {
         stack<int> S;
         height.push_back(0);

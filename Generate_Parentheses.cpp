@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<string> generateParenthesis(int n) {
         vector<string> result;
         if (n > 0) generator(result, "", 0, 0, n);

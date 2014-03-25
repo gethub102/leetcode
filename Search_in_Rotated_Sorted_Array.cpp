@@ -1,6 +1,6 @@
 // should rewrite
 class Solution {
-public:
+  public:
     int search(int A[], int n, int target) {
         // spcial cases
         if (n <= 0) return -1;

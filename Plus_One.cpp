@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> plusOne(vector<int>& digits) {
         if (digits.size() < 1) return digits;
         vector<int> result(digits.begin(), digits.end());

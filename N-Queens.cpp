@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<string> > solveNQueens(int n) {
         vector<vector<string> > allsolutions;
         vector<int> currentSolution;

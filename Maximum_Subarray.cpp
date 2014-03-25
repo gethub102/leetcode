@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int maxSubArray(int A[], int n) {
         int max_so_far  = A[0], max_ending_here = A[0];
         for (int i = 1; i < n; i++) {

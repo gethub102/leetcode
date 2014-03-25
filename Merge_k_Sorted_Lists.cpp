@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         // special cases
         if (lists.empty()) return NULL;

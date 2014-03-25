@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int uniquePaths(int m, int n) {
         vector<int> dp(n + 1, 0);
         dp[1] = 1;

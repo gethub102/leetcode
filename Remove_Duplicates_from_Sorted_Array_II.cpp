@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int removeDuplicates(int A[], int n) {
         if (n <= 2) return n;
         int occur = 1;

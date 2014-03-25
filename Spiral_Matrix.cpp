@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> spiralOrder(vector<vector<int> >& matrix) {
         vector<int> result;
         if (matrix.empty()) return result;

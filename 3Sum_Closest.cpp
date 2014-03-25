@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int threeSumClosest(vector<int>& num, int target) {
         if (num.size() < 3) return -1; // special case
         sort(num.begin(), num.end());

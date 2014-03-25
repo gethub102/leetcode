@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool isPalindrome(int x) {
         if (x < 0) return false;
         if (x >= 0 && x <= 9) return true;

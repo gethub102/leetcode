@@ -16,7 +16,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     TreeNode* sortedListToBST(ListNode* head) {
 
         int len = 0;

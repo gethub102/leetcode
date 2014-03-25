@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int removeElement(int A[], int n, int elem) {
         int index = 0;
         for (int i = 0; i < n; i++) {

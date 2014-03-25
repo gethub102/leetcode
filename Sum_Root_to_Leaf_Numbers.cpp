@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     int sumNumbers(TreeNode* root) {
         if (!root) return 0;
         if (!root->left && !root->right) return root->val;

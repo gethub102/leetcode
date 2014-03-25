@@ -1,6 +1,6 @@
 // should be a better solution, should rewrite
 class Solution {
-public:
+  public:
     int minimumTotal(vector<vector<int> >& triangle) {
         int level = triangle.size();
         if (level == 0) return 0; //error

@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int numDecodings(string s) {
         if (s.empty()) return 0;
         vector<int> ways(s.size() + 1, 1);

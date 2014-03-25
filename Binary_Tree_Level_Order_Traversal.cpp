@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     vector<vector<int> > levelOrder(TreeNode* root) {
         vector<vector<int> > result;
         levelOrderRecursion(result, root, 0);

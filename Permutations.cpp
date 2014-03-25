@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > permute(vector<int>& num) {
         vector<vector<int> > result;
         vector<int> currentPermutaions;

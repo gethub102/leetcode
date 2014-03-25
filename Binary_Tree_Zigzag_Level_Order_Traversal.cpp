@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     vector<vector<int> > zigzagLevelOrder(TreeNode* root) {
         vector<vector<int> > result;
         zigzagLevelOrderRecursion(result, root, 0);

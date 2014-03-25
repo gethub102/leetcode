@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<vector<int> > generateMatrix(int n) {
         if (n <= 0) {
             vector<vector<int> > result;

@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     vector<vector<int> > pathSum(TreeNode* root, int sum) {
         vector<vector<int> > result;
         vector<int> currentPath;

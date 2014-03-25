@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> getRow(int rowIndex) {
         vector<int> array;
         for (int i = 0; i <= rowIndex; i++) {

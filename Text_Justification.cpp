@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<string> fullJustify(vector<string>& words, int L) {
         if (L == 0) return words;
         vector<string> result;

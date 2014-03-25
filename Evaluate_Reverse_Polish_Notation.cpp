@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int evalRPN(vector<string>& tokens) {
         if (tokens.size() == 1) return stoi(tokens[0]);
         if (tokens.size() < 3) return -1; //error

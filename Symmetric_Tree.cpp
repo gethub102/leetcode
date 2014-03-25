@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     bool isSymmetric(TreeNode* root) {
         if (root == NULL) return true;
         return isSym(root->left, root->right);

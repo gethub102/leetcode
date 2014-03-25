@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int longestConsecutive(vector<int>& num) {
         if (num.size() < 2) return num.size();
         sort(num.begin(), num.end());

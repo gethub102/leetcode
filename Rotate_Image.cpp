@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void rotate(vector<vector<int> >& matrix) {
         int len = matrix.size();
         for (int i = 0; i < len - 1; i++) {

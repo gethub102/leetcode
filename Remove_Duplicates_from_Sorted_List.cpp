@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* deleteDuplicates(ListNode* head) {
         ListNode* result = new ListNode(0);
         result -> next = head;

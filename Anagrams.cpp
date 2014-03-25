@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<string> anagrams(vector<string>& strs) {
         vector<string> result;
         if (strs.size() <= 1) return result;

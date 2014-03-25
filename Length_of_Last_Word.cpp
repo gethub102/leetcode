@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int lengthOfLastWord(const char* s) {
         int count = 0;
         int result = 0;

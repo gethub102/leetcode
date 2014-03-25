@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* partition(ListNode* head, int x) {
         ListNode* smallNodeHead = new ListNode(0);
         ListNode* largeNodeHead = new ListNode(0);

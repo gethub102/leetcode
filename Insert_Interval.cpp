@@ -12,7 +12,7 @@ bool compareInterval(Interval a, Interval b) {
 }
 
 class Solution {
-public:
+  public:
     vector<Interval> insert(vector<Interval>& intervals, Interval newInterval) {
         vector<Interval> result;
         intervals.push_back(newInterval);

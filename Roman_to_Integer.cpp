@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int romanToInt(string s) {
         if (s.length() == 0) return 0;
 

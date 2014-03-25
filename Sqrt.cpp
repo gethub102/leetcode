@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int sqrt(int x) {
         // special cases
         if (x < 0) return -1;

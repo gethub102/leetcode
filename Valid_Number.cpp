@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool isNumber(const char* s) {
         int i = 0;
         bool hasNum = false;

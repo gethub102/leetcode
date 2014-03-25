@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void solveSudoku(vector<vector<char> >& board) {
         vector<vector<char> > originalCopy(9);
         for (int i = 0; i < 9; i++) {

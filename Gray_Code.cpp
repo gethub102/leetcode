@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     vector<int> grayCode(int n) {
         vector<int> result;
         int size = 1 << n;

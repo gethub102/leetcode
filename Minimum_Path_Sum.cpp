@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int minPathSum(vector<vector<int> >& grid) {
         int rows = grid.size();
         if (rows == 0) return -1;

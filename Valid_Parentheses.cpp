@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     bool isValid(string s) {
         if (s.empty()) return true;
         stack<string> myStack;

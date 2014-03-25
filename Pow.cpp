@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     double pow(double x, int n) {
         if (n == 0) return 1.0;
         // Compute x^{n/2} and store the result into a temporary

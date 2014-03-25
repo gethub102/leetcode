@@ -7,7 +7,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
         ListNode* first = head;
         ListNode* second = head;

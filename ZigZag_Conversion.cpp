@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     string convert(string s, int nRows) {
         if (nRows <= 1 || nRows >= s.length()) return s;
         vector<string> result(nRows);

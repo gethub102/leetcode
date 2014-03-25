@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void setZeroes(vector<vector<int> >& matrix) {
         vector<bool> rowZeros(matrix.size(), false);
         vector<bool> columnsZeros(matrix[0].size(), false);

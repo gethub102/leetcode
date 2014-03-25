@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     TreeNode* sortedArrayToBST(vector<int>& num) {
         TreeNode* root = NULL;
         sortedArrayToBSTRecursion(num, 0, num.size() - 1, root);

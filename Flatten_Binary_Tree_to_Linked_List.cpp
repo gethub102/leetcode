@@ -8,7 +8,7 @@
  * };
  */
 class Solution {
-public:
+  public:
     void flatten(TreeNode* root) {
         if (!root) return;
         TreeNode* rightChild = root->right;

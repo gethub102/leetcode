@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     void reverseWords(string& s) {
         if (s.empty())return;
         stack<string> stringStack;

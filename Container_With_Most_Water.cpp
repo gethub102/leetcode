@@ -1,5 +1,5 @@
 class Solution {
-public:
+  public:
     int maxArea(vector<int>& height) {
         if (height.empty()) return 0;
         int begin = 0, end = height.size() - 1, result = 0, contain;
