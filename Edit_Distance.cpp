@@ -9,7 +9,7 @@ class Solution {
 // (5) 扫描完后，返回矩阵的最后一个值d[n][m]即是它们的距离。
 
 // 于是按照这个思路写了一个，果断超时
-// 然后又用 DP解答，结果还是超时，为什么呢，看注释
+// 然后又用 DP 加了一个 cache 解答，结果还是超时，为什么呢，看注释
     int minDistance(string word1, string word2) {
         vector<vector<int> > dp(word1.length(), vector<int>(word2.length(), -1));
         return minDistanceRecursion(word1, word2, word1.length(), word2.length(), dp);
@@ -22,7 +22,7 @@ class Solution {
         int flag;
         if (word1[length1 - 1] == word2[length2 - 1]) {
             flag = 0;
-            // 这里，特别关键，如果 word1[length1 - 1] == word2[length2 - 1]，还比什么大小？！直接两个 length 都减去1
+            // 这里，特别关键，如果 word1[length1 - 1] == word2[length2 - 1]，还比什么大小？！直接两个 length 都减去1，这里太巧了
             dp[length1 - 1][length2 - 1] = minDistanceRecursion(word1, word2, length1 - 1, length2 - 1, dp);
         } else {
             flag = 1;
@@ -32,6 +32,5 @@ class Solution {
 
         }
         return dp[length1 - 1][length2 - 1];
-
     }
 };
