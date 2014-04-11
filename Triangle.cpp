@@ -1,19 +1,20 @@
-// should be a better solution, should rewrite
 class Solution {
   public:
     int minimumTotal(vector<vector<int> >& triangle) {
-        int level = triangle.size();
-        if (level == 0) return 0; //error
-        if (level == 1) return triangle[0][0];
-        // general case
-        for (int i = 1; i < level; i++) {
-            triangle[i][0] += triangle[i - 1].front();
-            for (int j = 1; j < i; j++) {
-                triangle[i][j] += min(triangle[i - 1][j - 1], triangle[i - 1][j]);
+        if (triangle.size() == 0) return 0;
+        vector<int> dp(triangle.size(), triangle[0][0]);
+        for (int i = 1; i < triangle.size(); i++) {
+            dp[i] = dp[i - 1] + triangle[i][i];
+            for (int j = i - 1; j >= 1; j--) {
+                dp[j] = triangle[i][j] + min(dp[j], dp[j - 1]);
             }
-            triangle[i][i] += triangle[i - 1].back();
+            dp[0] = dp[0] + triangle[i][0];
+
         }
-        sort(triangle.back().begin(), triangle.back().end());
-        return triangle.back().front();
+        int result = INT_MAX;
+        for (int k = 0; k < triangle.size(); k++) {
+            result = min(result, dp[k]);
+        }
+        return result;
     }
 };
