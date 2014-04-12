@@ -1,7 +1,7 @@
 class Solution {
   public:
     int search(int A[], int n, int target) {
-        return   searchRecursion(A, 0, n - 1, target);
+        return searchRecursion(A, 0, n - 1, target);
     }
 
     int searchRecursion(int A[], int begin, int end, int target) {
