@@ -10,19 +10,15 @@
 class Solution {
   public:
     bool isValidBST(TreeNode* root) {
-        if (!root) return true;
-        vector<int> inorder;
-        isValidBSTinorder(root,  inorder);
-        for (int i = 0; i < inorder.size() - 1; i++) {
-            if (inorder[i] >= inorder[i + 1]) return false;
-        }
-        return true;
+        return isBSTHelper(root, INT_MIN, INT_MAX);
     }
 
-    void isValidBSTinorder(TreeNode* root, vector<int>& inorder) {
-        if (!root) return;
-        isValidBSTinorder(root->left, inorder);
-        inorder.push_back(root->val);
-        isValidBSTinorder(root->right, inorder);
+    bool isBSTHelper(TreeNode* p, int low, int high) {
+        if (!p) return true;
+        if (low < p->val && p->val < high)
+            return isBSTHelper(p->left, low, p->val) &&
+                   isBSTHelper(p->right, p->val, high);
+        else
+            return false;
     }
 };

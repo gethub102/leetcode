@@ -9,23 +9,24 @@
 class Solution {
   public:
     ListNode* partition(ListNode* head, int x) {
-        ListNode* smallNodeHead = new ListNode(0);
-        ListNode* largeNodeHead = new ListNode(0);
         ListNode* smallNode = new ListNode(0);
         ListNode* largeNode = new ListNode(0);
-        smallNodeHead ->next = smallNode;
-        largeNodeHead ->next = largeNode;
+        ListNode* smallNodeHead = smallNode;
+        ListNode* largeNodeHead = largeNode;
         while (head) {
+            ListNode* oldNext = head->next;
             if (head->val < x) {
-                smallNode->next = new ListNode(head->val);
+                smallNode->next = head;
                 smallNode = smallNode->next;
+                smallNode->next = NULL; // cut loop
             } else {
-                largeNode->next = new ListNode(head->val);
+                largeNode->next = head;
                 largeNode = largeNode->next;
+                largeNode->next = NULL; // cut loop
             }
-            head = head->next;
+            head = oldNext;
         }
-        smallNode ->next = largeNodeHead->next->next;
-        return smallNodeHead->next->next;
+        smallNode ->next = largeNodeHead->next;
+        return smallNodeHead->next;
     }
 };
