@@ -27,7 +27,7 @@ class Solution {
         }
         return BuildBST(head, 0, len - 1);
     }
-    TreeNode* BuildBST(ListNode*& list, int start, int end) {
+    TreeNode* BuildBST(ListNode*& list, int start, int end) { // DO NOT FORGET & !!!
         if (start > end) return NULL;
         int mid = (start + end) / 2; //if use start + (end - start) >> 1, test case will break, strange!
         TreeNode* leftChild = BuildBST(list, start, mid - 1);
