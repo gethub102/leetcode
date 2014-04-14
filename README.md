@@ -1,2 +1,2 @@
-刷三遍啊刷三遍
-光写不够，需要总结.
+too many Time Limit Exceeded  
+too stupid me  
