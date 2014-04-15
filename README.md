@@ -1,2 +1,2 @@
-too many Time Limit Exceeded  
-too stupid me  
+too many Time Limit Exceeded
+too stupid me
