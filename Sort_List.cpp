@@ -20,7 +20,7 @@ class Solution {
         if (!head || !head->next) return head;
         ListNode* slow = head;
         ListNode* fast = head;
-        while (fast->next && fast->next->next) {
+        while (fast->next && fast->next->next) { // this condition important!
             slow = slow->next;
             fast = fast->next->next;
         }
