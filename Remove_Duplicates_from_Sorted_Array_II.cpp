@@ -3,9 +3,9 @@ class Solution {
     int removeDuplicates(int A[], int n) {
         if (n <= 2) return n;
         int occur = 1;
-        int index = 0;
+        int res = 0;
         for (int i = 1; i < n; i++) {
-            if (A[index] == A[i]) {
+            if (A[res] == A[i]) {
                 if (occur == 2) {
                     continue;
                 }
@@ -13,8 +13,9 @@ class Solution {
             } else {
                 occur = 1 ;
             }
-            A[++index] = A[i];
+            res++;
+            A[res] = A[i];
         }
-        return index + 1;
+        return res + 1;
     }
 };
