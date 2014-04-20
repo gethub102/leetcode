@@ -7,7 +7,7 @@ too stupid me
 ## 数学题
 
 | 题目        | 说明           |  
-| ------------- |:-------------:|
+| ------------- |-------------|
 | ZigZag Conversion        | 这题比较绕，最简单的数学，做好边界处理            |
 | Reverse Integer        | 很简单，但是不要忘了 overflow check           |   
 | String to Integer (atoi) | overflow check 和 isspace 等check | 
