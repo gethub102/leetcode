@@ -1,18 +1,18 @@
 class Solution {
   public:
     int reverse(int x) {
-        int result = 0;
         bool negative = false;
+        if (x == INT_MIN) return -1; // overflow
         if (x < 0) {
             x = -x;
             negative = true;
         }
-        while (x > 0) {
-            result *= 10;
-            result += (x % 10);
+        int result = 0;
+        while (x) {
+            if (result >= INT_MAX / 10 || INT_MAX - x % 10 < 10 * result) return -1; // overflow check
+            result = 10 * result + x % 10;
             x = x / 10;
         }
-        if (negative) result = -result;
-        return result;
+        return negative ? -result : result;
     }
 };
