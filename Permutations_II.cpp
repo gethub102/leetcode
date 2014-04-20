@@ -16,7 +16,7 @@ class Solution {
         }
         for (int i = 0; i < num.size(); i++) {
             if (visited[i] == false) {
-                if (i > 0 && num[i] == num[i - 1] && visited[i - 1] == false)continue;
+                if (i > 0 && num[i] == num[i - 1] && visited[i - 1] == false)continue; // fix Time Limit Exceeded
                 singleSolution.push_back(num[i]);
                 visited[i] = true;
                 permuteUniqueRecursion(result, singleSolution, num, visited);

@@ -2,24 +2,23 @@ class Solution {
   public:
     vector<vector<int> > permute(vector<int>& num) {
         vector<vector<int> > result;
-        vector<int> currentPermutaions;
-        permuteRecursion(result, currentPermutaions, num, 0, num.size());
+        if (num.size() <= 0) return result;
+        vector<int> onesolution;
+        permutationsDFS(result, onesolution, num);
         return result;
     }
 
-    void permuteRecursion(vector<vector<int> >& result, vector<int> currentPermutaions, vector<int> num, int currentSize, int size) {
-        if (currentSize == size) {
-            result.push_back(currentPermutaions);
+    void permutationsDFS(vector<vector<int> >& result, vector<int> onesolution, vector<int> num) {
+        if (onesolution.size() == num.size()) {
+            result.push_back(onesolution);
             return;
         }
-        for (int i = 0; i < size; i++) {
-            if (currentPermutaions.empty() ||
-                    find(currentPermutaions.begin(), currentPermutaions.end(), num[i]) == currentPermutaions.end()) {
-                currentPermutaions.push_back(num[i]);
-                permuteRecursion(result, currentPermutaions, num, currentSize + 1, size);
-                currentPermutaions.pop_back();
+        for (int i = 0; i < num.size(); i++) {
+            if (find(onesolution.begin(), onesolution.end(), num[i]) == onesolution.end()) {
+                onesolution.push_back(num[i]);
+                permutationsDFS(result, onesolution, num);
+                onesolution.pop_back();
             }
         }
-
     }
 };
