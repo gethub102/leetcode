@@ -9,12 +9,19 @@ class Solution {
         }
         for (int i = length - 1; i >= 0; i--) {
             for (int j = i; j <= length - 1; j++) {
-                if (i == j) isPalindrome[i][j] = true;
-                else if (i + 1 == j) isPalindrome[i][j] = s[i] == s[j];
-                else isPalindrome[i][j] = s[i] == s[j] && isPalindrome[i + 1][j - 1];
+                if (i == j) {
+                    isPalindrome[i][j] = true;
+                } else if (i + 1 == j) {
+                    isPalindrome[i][j] = s[i] == s[j];
+                } else {
+                    isPalindrome[i][j] = s[i] == s[j] && isPalindrome[i + 1][j - 1];
+                }
                 if (isPalindrome[i][j]) {
-                    if (j == length - 1) dp[i] = 0;
-                    else dp[i] = min(dp[i], dp[j + 1] + 1); // cut between j and j+1, comparison, update
+                    if (j == length - 1) {
+                        dp[i] = 0;
+                    } else {
+                        dp[i] = min(dp[i], dp[j + 1] + 1); // cut between j and j+1, comparison, update
+                    }
                 }
             }
         }

@@ -7,14 +7,30 @@
 class Solution {
   public:
     string longestPalindrome(string s) {
-        bool dp[s.length()][s.length()];
-        int maxL = 0, start = 0, end = 0;
-        for (int i = s.length() - 1; i >= 0; i--) {
-            dp[i][i] = true;
-            for (int j = i + 1; j <= s.length() - 1; j++) {
-                dp[i][j] = (s[i] == s[j]) && (i + 1 == j || dp[i + 1][j - 1]);
-                if (dp[i][j] && maxL < (j - i + 1)) {
-                    maxL = j - i + 1;
+        if (s.empty()) {
+            return "";
+        }
+        int length  = s.length();
+        if (length == 1) {
+            return s;
+        }
+        bool dp[length][length];
+        int start = 0;
+        int end = 0;
+        int max_length = 1;
+        for (int i = length - 1; i >= 0; i--) {
+            for (int j = i; j <= length - 1; j++) {
+                if (i == j) {
+                    dp[i][j] = true;
+                    continue;
+                } else if (i + 1 == j) {
+                    dp[i][j] = s[i] == s[j];
+                } else {
+                    dp[i][j] = s[i] == s[j] && dp[i + 1][j - 1];
+
+                }
+                if (dp[i][j]  &&  j - i + 1 > max_length) {
+                    max_length = j - i + 1;
                     start = i;
                     end = j;
                 }
