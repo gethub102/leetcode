@@ -1,24 +1,27 @@
 class Solution {
   public:
     vector<int> twoSum(vector<int>& numbers, int target) {
-        vector<int> results;
-        if (numbers.size() < 2) return results;
-        else {
-            vector<int> numbers_sorted(numbers);
-            sort(numbers_sorted.begin(), numbers_sorted.end());
-            for (int i = 0; i < numbers_sorted.size() - 1; i++) {
-                if (find(numbers_sorted.begin() + i + 1, numbers_sorted.end(), target - numbers_sorted[i]) != numbers_sorted.end()) {
-                    int m = find(numbers.begin(), numbers.end(), numbers_sorted[i]) - numbers.begin();
-                    int n = find(numbers.begin(), numbers.end(), target - numbers_sorted[i]) - numbers.begin();
-                    if (m == n) {
-                        n = find(numbers.begin() + m + 1, numbers.end(), target - numbers_sorted[i]) - numbers.begin();
-                    }
-                    results.push_back(min(m + 1, n + 1));
-                    results.push_back(max(m + 1, n + 1));
-                    return results;
-                }
+        vector<int> result;
+        if (numbers.size() <= 1)  {
+            return result;
+        }
+        if (numbers.size() == 2) {
+            if (numbers[0] + numbers[1] == target) {
+                result.push_back(0);
+                result.push_back(1);
             }
-            return results;
+            return result;
+        }
+        // general case;
+        map<int, int> mymap; // keep <numbers[i], i>
+        for (int i = 0; i < numbers.size(); i++) {
+            if (mymap.find(target - numbers[i]) != mymap.end()) {
+                result.push_back(mymap[target - numbers[i]] + 1);
+                result.push_back(i + 1);
+                return result;
+            } else {
+                mymap[numbers[i]] = i;
+            }
         }
     }
 };
