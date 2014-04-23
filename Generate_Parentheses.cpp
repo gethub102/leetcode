@@ -2,7 +2,9 @@ class Solution {
   public:
     vector<string> generateParenthesis(int n) {
         vector<string> result;
-        if (n > 0) generator(result, "", 0, 0, n);
+        if (n > 0) {
+            generator(result, "", 0, 0, n);
+        }
         return result;
     }
 
@@ -13,8 +15,10 @@ class Solution {
             return;
         }
         // add left
-        generator(result, s + '(', left + 1, right, n);
+        generator(result, s + "(", left + 1, right, n);
         // add right, only when left is more than right
-        if (left > right) generator(result, s + ")", left, right + 1, n);
+        if (left > right) {
+            generator(result, s + ")", left, right + 1, n);
+        }
     }
 };
