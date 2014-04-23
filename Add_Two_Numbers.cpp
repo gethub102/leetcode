@@ -10,21 +10,17 @@ class Solution {
   public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         ListNode* result = new ListNode(0);
-        ListNode* tmp = new ListNode(0);
-        result -> next = tmp;
-        int digit;
-        bool carry = false;
+        ListNode* current = result;
+        bool carry =  false;
         while (l1 || l2) {
-            digit = 0;
-            tmp -> next = new ListNode(0);
-            tmp = tmp-> next;
+            int digit = 0;
             if (l1) {
                 digit += l1->val;
-                l1 = l1 -> next;
+                l1 = l1->next;
             }
             if (l2) {
                 digit += l2->val;
-                l2 = l2 -> next;
+                l2 = l2->next;
             }
             if (carry) {
                 digit ++;
@@ -35,13 +31,12 @@ class Solution {
             } else {
                 carry = false;
             }
-            tmp -> val = digit;
+            current->next = new ListNode(digit);
+            current = current->next;
         }
         if (carry) {
-            tmp -> next = new ListNode(0);
-            tmp = tmp-> next;
-            tmp -> val = 1;
+            current -> next = new ListNode(1);
         }
-        return result->next->next;
+        return result -> next;
     }
 };
