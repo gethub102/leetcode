@@ -6,12 +6,12 @@ class Solution {
         int left[n];
         int right[n];
         int sub[n];
-		// from left to right
+        // from left to right
         left[0] = A[0];
         for (i = 1; i < n; i++) {
             left[i] = max(left[i - 1], A[i]);
         }
-		// from rigth to left
+        // from rigth to left
         right[n - 1] = A[n - 1];
         sub[n - 1] = min(left[n - 1], right[n - 1]);
         for (i = n - 2; i >= 0; i--) {
