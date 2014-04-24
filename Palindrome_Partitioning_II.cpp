@@ -3,7 +3,7 @@ class Solution {
     int minCut(string s) {
         int length =  s.length();
         bool isPalindrome[length][length];
-        int dp[length - 1];
+        int dp[length];
         for (int i = 0; i < length; i++) {
             dp[i] = length - 1 - i; // the worst case, cut every char
         }
