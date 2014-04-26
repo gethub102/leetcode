@@ -9,7 +9,9 @@ class Solution {
                 vector <int> new_element = result[j];
                 new_element.push_back(S[i]);
                 // add a check
-                if (find(result.begin(), result.end(), new_element) == result.end()) result.push_back(new_element);
+                if (find(result.begin(), result.end(), new_element) == result.end()) {
+                    result.push_back(new_element);
+                }
             }
         }
         // remove duplicate
