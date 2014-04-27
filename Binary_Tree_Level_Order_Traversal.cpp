@@ -16,10 +16,11 @@ class Solution {
     }
 
     void levelOrderRecursion(vector<vector<int> >& result, TreeNode* root, int level) {
-        if (!root) return;
+        if (!root) {
+            return;
+        }
         if (result.size() <= level) {
-            vector<int> levels;
-            levels.push_back(root->val);
+            vector<int> levels(1, root->val);
             result.push_back(levels);
         } else {
             result[level].push_back(root->val);

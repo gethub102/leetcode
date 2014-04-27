@@ -14,7 +14,9 @@ class Solution {
     }
 
     int maxDepthRecursion(TreeNode* root, int level) {
-        if (!root) return level;
+        if (!root) {
+            return level;
+        }
         return max(maxDepthRecursion(root->left, level + 1), maxDepthRecursion(root->right, level + 1));
     }
 };
