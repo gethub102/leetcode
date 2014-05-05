@@ -1,15 +1,17 @@
 class Solution {
   public:
     int removeDuplicates(int A[], int n) {
-        if (n <= 1)  return n;
-        int res = 0;
+        if (n <= 1)  {
+            return n;
+        }
+        int index = 0;
         for (int i = 1; i < n; i++) {
-            // 看到分歧加一下，剩下时候都不动
-            if (A[i] != A[res]) {
-                res++;
-                if (res != i) A[res] = A[i];
+            // if diff, add
+            if (A[i] != A[index]) {
+                index++;
+                A[index] = A[i];
             }
         }
-        return res + 1;
+        return index + 1;
     }
 };
