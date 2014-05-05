@@ -1,21 +1,17 @@
 class Solution {
   public:
     int removeDuplicates(int A[], int n) {
-        if (n <= 2) return n;
-        int occur = 1;
-        int res = 0;
-        for (int i = 1; i < n; i++) {
-            if (A[res] == A[i]) {
-                if (occur == 2) {
-                    continue;
-                }
-                occur++;
-            } else {
-                occur = 1 ;
-            }
-            res++;
-            A[res] = A[i];
+        if (n <= 1)  {
+            return n;
         }
-        return res + 1;
+        int index = 1;
+        for (int i = 2; i < n; i++) {
+            // if diff, add
+            if (A[i] != A[index] || A[i] != A[index - 1]) {
+                index++;
+                A[index] = A[i];
+            }
+        }
+        return index + 1;
     }
 };
