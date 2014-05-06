@@ -10,15 +10,17 @@
 class Solution {
   public:
     bool isValidBST(TreeNode* root) {
-        return isBSTHelper(root, INT_MIN, INT_MAX);
+        return isValidBSTRecursion(root, INT_MIN, INT_MAX);
     }
 
-    bool isBSTHelper(TreeNode* p, int low, int high) {
-        if (!p) return true;
-        if (low < p->val && p->val < high)
-            return isBSTHelper(p->left, low, p->val) &&
-                   isBSTHelper(p->right, p->val, high);
-        else
+    bool isValidBSTRecursion(TreeNode* root, int low, int high) {
+        if (!root) {
+            return true;
+        }
+        if (low < root->val && root->val < high) {
+            return isValidBSTRecursion(root->left, low, root->val) && isValidBSTRecursion(root->right, root->val, high);
+        } else {
             return false;
+        }
     }
 };
