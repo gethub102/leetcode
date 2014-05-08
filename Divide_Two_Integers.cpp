@@ -1,32 +1,19 @@
 class Solution {
   public:
     int divide(int dividend, int divisor) {
-        int sign = 1;
-        if (dividend < 0) {
-            sign = -sign;
-        }
-        if (divisor < 0) {
-            sign = -sign;
-        }
-
-        unsigned long long tmp = abs((long long)dividend);
-        unsigned long long tmp2 = abs((long long)divisor);
-
-        unsigned long c = 1;
-        while (tmp > tmp2) {
-            tmp2 = tmp2 << 1;
-            c = c << 1;
-        }
-
+        long long a = dividend;
+        long long b = divisor;
+        // can not write in one line, will overflow
+        a = abs(a);
+        b = abs(b);
         int res = 0;
-        while (tmp >= abs((long long)divisor)) {
-            while (tmp >= tmp2) {
-                tmp -= tmp2;
-                res = res + c;
+        while (a >= b)  {
+            long long t = b;
+            for (int i = 1; a >= t; i <<= 1, t <<= 1) {
+                a -= t;
+                res += i;
             }
-            tmp2 = tmp2 >> 1;
-            c = c >> 1;
         }
-        return sign * res;
+        return ((dividend < 0) ^ (divisor < 0)) ? -res : res;
     }
 };
