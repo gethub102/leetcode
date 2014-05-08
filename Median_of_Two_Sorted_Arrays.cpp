@@ -1,29 +1,30 @@
+// DO NOT merge together!!!
 class Solution {
   public:
     double findMedianSortedArrays(int A[], int m, int B[], int n) {
-        vector<int> C;
-        int i = 0;
-        int j = 0;
-        while (m && n && i < m && j < n) {
-            if (A[i] <= B[j]) {
-                C.push_back(A[i]);
-                i++;
-            } else {
-                C.push_back(B[j]);
-                j++;
+        if ((m + n) % 2 == 0) {
+            return (findMedianSortedArraysBinarySearch(A, m, B, n, (m + n) / 2) + findMedianSortedArraysBinarySearch(A, m, B, n, (m + n) / 2 + 1)) / 2;
+        } else {
+            return findMedianSortedArraysBinarySearch(A, m, B, n, (m + n) / 2 + 1);
+        }
+    }
+
+    double findMedianSortedArraysBinarySearch(int A[], int m, int B[], int n, int k) {
+        if (m <= 0) return B[k - 1];
+        if (n <= 0) return A[k - 1];
+        if (k <= 1) return min(A[0], B[0]);
+        if (B[n / 2] >= A[m / 2]) {
+            if ((m / 2 + 1 + n / 2) >= k)  {
+                return findMedianSortedArraysBinarySearch(A, m, B, n / 2, k);
+            } else  {
+                return findMedianSortedArraysBinarySearch(A + m / 2 + 1, m - (m / 2 + 1), B, n, k - (m / 2 + 1));
+            }
+        } else {
+            if ((n / 2 + 1 + m / 2) >= k)  {
+                return findMedianSortedArraysBinarySearch(A, m / 2, B, n, k);
+            } else  {
+                return findMedianSortedArraysBinarySearch(A, m, B + n / 2 + 1, n - (n / 2 + 1), k - (n / 2 + 1));
             }
         }
-        while (i < m) {
-            C.push_back(A[i]);
-            i++;
-        }
-        while (j < n) {
-            C.push_back(B[j]);
-            j++;
-        }
-        if (C.size() == 1) return C[0];
-        if ((m + n) % 2 != 0) return (double)C[(m + n) / 2];
-        else return ((double)(C[(m + n) / 2 - 1] + C[(m + n) / 2])) / 2;
-
     }
 };
