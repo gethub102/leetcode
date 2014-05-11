@@ -18,24 +18,20 @@ class Solution {
             return result;
         } else if (solution == 2) {
             // maintain a stack
-            stack<int> mystack;
-            height.push_back(0);
+            if (height.size() == 0) {
+                return 0;
+            }
+            stack<int> myStack;
             int result = 0;
-            for (int i = 0; i < height.size(); i++) {
-                if (mystack.empty() || height[mystack.top()] <= height[i]) {
-                    mystack.push(i);
-                } else {
-                    int tmp = mystack.top();
-                    mystack.pop();
-                    int width;
-                    if (mystack.empty()) {
-                        width = i;
-                    } else {
-                        width = i - mystack.top() - 1;
-                    }
-                    i--;
-                    result = max(result, height[tmp] * width);
+            for (int i = 0; i <= height.size(); i++) {
+                int curt = (i == height.size()) ? -1 : height[i];
+                while (!myStack.empty() && curt <= height[myStack.top()]) {
+                    int h = height[myStack.top()];
+                    myStack.pop();
+                    int w = myStack.empty() ? i : i - myStack.top() - 1;
+                    result = max(result, h * w);
                 }
+                myStack.push(i);
             }
             return result;
         }
