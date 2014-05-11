@@ -6,6 +6,8 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
+// first recursion
 class Solution {
   public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
@@ -42,5 +44,38 @@ class Solution {
         }
         newNode->next = first ? first : second;
         return result->next;
+    }
+};
+
+// second use heap
+
+struct compare {
+    bool operator()(const ListNode* a, const ListNode* b) {
+        return a->val > b->val;
+    }
+};
+
+class Solution {
+  public:
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        priority_queue<ListNode*, vector<ListNode*>, compare> minHeap;
+        // create min heap
+        for (int i = 0; i < lists.size(); i++) {
+            if (lists[i]) {
+                minHeap.push(lists[i]);
+            }
+        }
+        ListNode* dummyNode = new ListNode(0);
+        ListNode* currentNode = dummyNode;
+        while (!minHeap.empty()) {
+            ListNode* currentMin = minHeap.top();
+            minHeap.pop();
+            currentNode->next =  currentMin;
+            if (currentMin->next) {
+                minHeap.push(currentMin->next);
+            }
+            currentNode = currentNode->next;
+        }
+        return dummyNode->next;
     }
 };
