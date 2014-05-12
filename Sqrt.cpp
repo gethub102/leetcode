@@ -1,3 +1,5 @@
+// newton rule
+
 class Solution {
   public:
     int sqrt(int x) {
@@ -12,5 +14,26 @@ class Solution {
             res = (res + x / res) / 2;
         }
         return int(res);
+    }
+};
+
+// binary
+class Solution {
+  public:
+    int sqrt(int x) {
+        long long start = 0;
+        long long end = x / 2 + 1;
+        while (start <= end)  {
+            long long mid = start + (end - start) / 2;
+            long long sq = mid * mid;
+            if (sq == x) {
+                return mid;
+            } else if (sq < x) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return end;
     }
 };
