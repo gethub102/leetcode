@@ -13,21 +13,25 @@ class Solution {
         return generateTreesRecursion(1, n);
     }
 
-    vector<TreeNode*>  generateTreesRecursion(int begin, int end) {
+    vector<TreeNode*> generateTreesRecursion(int low, int high) {
         vector<TreeNode*> result;
-        if (begin > end) {
+        if (low > high) {
             result.push_back(NULL);
             return result;
-        }
-        for (int i = begin; i <= end; i++) {
-            vector<TreeNode*> leftSubtrees = generateTreesRecursion(begin, i - 1);
-            vector<TreeNode*> rightSubtrees = generateTreesRecursion(i + 1, end);
-            for (int j = 0; j < leftSubtrees.size(); j++) {
-                for (int k = 0; k < rightSubtrees.size(); k++) {
-                    TreeNode* root = new TreeNode(i);
-                    root->left = leftSubtrees[j];
-                    root->right = rightSubtrees[k];
-                    result.push_back(root);
+        } else if (low == high) {
+            result.push_back(new TreeNode(low));
+            return result;
+        } else {
+            for (int i = low; i <= high; i++) {
+                vector<TreeNode*> leftSubtrees = generateTreesRecursion(low, i - 1);
+                vector<TreeNode*> rightSubtrees = generateTreesRecursion(i + 1, high);
+                for (int j = 0; j < leftSubtrees.size(); j++) {
+                    for (int k = 0; k < rightSubtrees.size(); k++) {
+                        TreeNode* root = new TreeNode(i);
+                        root->left = leftSubtrees[j];
+                        root->right = rightSubtrees[k];
+                        result.push_back(root);
+                    }
                 }
             }
         }
