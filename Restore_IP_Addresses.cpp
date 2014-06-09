@@ -5,15 +5,13 @@ class Solution {
         string oneSolution;
         restoreIpAddressesDFS(results, oneSolution, s, 0);
         return results;
-
     }
 
     void restoreIpAddressesDFS(vector<string>& results, string oneSolution, string s, int byte) {
-        if (byte == 4 && s.empty()) {
-            results.push_back(oneSolution);
-            return;
-        }
-        if (byte == 4 && !s.empty()) {
+        if (byte == 4) {
+            if (s.empty()) {
+                results.push_back(oneSolution);
+            }
             return;
         }
         for (int i = 1; i <= 3; i++) {
@@ -27,7 +25,9 @@ class Solution {
     }
 
     bool isValidIP(string s) {
-        if (s.length() > 1 && s[0] == '0') return false; // case 001,is false
+        if (s.length() > 1 && s[0] == '0') {
+            return false;   // case 001,is false
+        }
         int value = stoi(s);
         return value >= 0 && value <= 255;
     }
