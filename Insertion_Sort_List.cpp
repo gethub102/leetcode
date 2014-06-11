@@ -1,3 +1,6 @@
+/*
+Sort a linked list using insertion sort.
+*/
 /**
  * Definition for singly-linked list.
  * struct ListNode {
@@ -9,25 +12,30 @@
 class Solution {
   public:
     ListNode* insertionSortList(ListNode* head) {
-        if (head == NULL) return NULL;
-        if (head->next == NULL) return head;
-        ListNode* result = new ListNode(INT_MIN);
-        result -> next = head;
-        ListNode* toMove = head->next;
-        head->next = NULL;
-        while (toMove) {
-            ListNode* toMoveNext = toMove->next;
-            ListNode* tmp = result;
-            while (tmp) {
-                if (toMove->val >= tmp->val && (tmp->next == NULL || tmp->next->val >= toMove->val)) {
-                    toMove ->next = tmp->next;
-                    tmp->next = toMove;
-                    break;
-                }
-                tmp = tmp->next;
-            }
-            toMove = toMoveNext;
+        if (!head || !head->next) {
+            return head;
         }
-        return result->next;
+        ListNode* dummyNode = new ListNode(INT_MIN);
+        while (head) {
+            ListNode* next = head->next;
+            head->next = NULL;
+            // for each node
+            ListNode* current = dummyNode;
+            while (current) {
+                if (!current -> next) {
+                    current->next = head;
+                    break;
+                } else if (current->val <= head->val && head->val <= current->next->val) {
+                    head->next = current->next;
+                    current->next = head;
+                    break;
+                } else {
+                    current = current->next;
+                }
+            }
+            // go to next
+            head = next;
+        }
+        return dummyNode->next;
     }
 };
