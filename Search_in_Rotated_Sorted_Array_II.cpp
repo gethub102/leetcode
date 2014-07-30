@@ -5,8 +5,12 @@ class Solution {
     }
 
     bool searchRecursion(int A[], int begin, int end, int target) {
-        if (begin > end) return false;
-        if (begin == end) return A[begin] == target;
+        if (begin > end) {
+            return false;
+        }
+        if (begin == end) {
+            return A[begin] == target;
+        }
         int mid = begin + (end - begin) / 2;
         if (A[mid] == target) return true;
         if (A[begin] < A[mid] && begin != mid) {
