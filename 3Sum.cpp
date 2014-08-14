@@ -48,3 +48,45 @@ class Solution {
         return result;
     }
 };
+
+
+// another solution
+class Solution {
+  public:
+    vector<vector<int> > threeSum(vector<int>& num) {
+        vector<vector<int> > result;
+        if (num.size() < 3) {
+            return result;
+        }
+        sort(num.begin(), num.end());
+        for (int i = 0; i <= num.size() - 3; i++) {
+            if (i > 0 && num[i] == num[i - 1]) {
+                continue;
+            }
+            int a = num[i];
+            int b_index = i + 1;
+            int c_index = num.size() - 1;
+            while (b_index < c_index) {
+                int b = num[b_index];
+                int c = num[c_index];
+                if (a + b + c == 0) {
+                    vector<int> oneResult;
+                    oneResult.push_back(a);
+                    oneResult.push_back(b);
+                    oneResult.push_back(c);
+                    if (find(result.begin(), result.end(), oneResult) == result.end()) {
+                        result.push_back(oneResult);
+                    }
+                    b_index++;
+                    c_index--;
+                } else if (a + b + c > 0) {
+                    c_index--;
+                } else {
+                    b_index++;
+                }
+            }
+        }
+        return result;
+    }
+};
+
