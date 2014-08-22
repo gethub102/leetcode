@@ -37,8 +37,7 @@ class LRUCache {
         // if found
         if (it != mp.end()) {
             node* p = it->second;
-            p->pre->next = p->next; // delete old pointer
-            p->next->pre = p->pre;  // delete old pointer
+            removeFromList(p);
             putToHead(p);
             return p->value;
         } else {
@@ -53,8 +52,7 @@ class LRUCache {
         unordered_map<int, node*>::iterator it = mp.find(k);
         if (it != mp.end()) {
             node* p = it->second;
-            p->pre->next = p->next;
-            p->next->pre = p->pre;
+            removeFromList(p);
             putToHead(p);
             p->value = val;
         } else {
@@ -64,13 +62,17 @@ class LRUCache {
             size++;
             if (size > capacity) {
                 p = tail->pre;
-                tail->pre = p->pre;
-                p->pre->next = tail;
+                removeFromList(p);
                 it = mp.find(p->key);
                 mp.erase(it);
                 delete p;
             }
         }
+    }
+
+    void removeFromList(node* p) {
+        p->pre->next = p->next;
+        p->next->pre = p->pre;
     }
 
     void putToHead(node* p) {
