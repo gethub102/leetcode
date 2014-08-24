@@ -1,9 +1,16 @@
+/*
+Given a roman numeral, convert it to an integer.
+
+Input is guaranteed to be within the range from 1 to 3999.
+*/
 class Solution {
   public:
     int romanToInt(string s) {
-        if (s.length() == 0) return 0;
+        if (s.length() == 0) {
+            return 0
+        };
 
-        map<char, int> m;
+        map<char, int> myMap;
         m['I'] = 1;
         m['V'] = 5;
         m['X'] = 10;
@@ -13,12 +20,12 @@ class Solution {
         m['M'] = 1000;
 
         int n = s.length();
-        int sum = m[s[n - 1]];
+        int sum = myMap[s[n - 1]];
         for (int i = n - 2; i >= 0; i--) {
-            if (m[s[i + 1]] <= m[s[i]])
-                sum += m[s[i]];
+            if (myMap[s[i + 1]] <= myMap[s[i]])
+                sum += myMap[s[i]];
             else
-                sum -= m[s[i]];
+                sum -= myMap[s[i]];
         }
         return sum;
     }
