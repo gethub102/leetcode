@@ -36,3 +36,35 @@ class Solution {
         }
     }
 };
+
+// rewrite
+
+class Solution {
+  public:
+    vector<vector<int> > combinationSum(vector<int>& candidates, int target) {
+        vector<vector<int> > result;
+        if (candidates.empty()) {
+            return result;
+        }
+        sort(candidates.begin(), candidates.end());
+        vector<int> singleSolution;
+        combinationSumDFS(result, singleSolution, candidates, target);
+        return result;
+    }
+
+    void combinationSumDFS(vector<vector<int> >& result, vector<int> singleSolution, vector<int> candidates, int target) {
+        if (target == 0) {
+            if (!singleSolution.empty()) {
+                result.push_back(singleSolution);
+            }
+            return;
+        }
+        for (int i = 0; i < candidates.size(); i++) {
+            if (candidates[i] <= target && (singleSolution.empty() || candidates[i] >= singleSolution.back())) {
+                singleSolution.push_back(candidates[i]);
+                combinationSumDFS(result, singleSolution, candidates, target - candidates[i]);
+                singleSolution.pop_back();
+            }
+        }
+    }
+};
